@@ -9,6 +9,12 @@
   Simple SQLite wrapper for Java.
 ```
 
+[![GitHub release](https://img.shields.io/github/v/release/cajx-it/SqliteGoSimp?color=blue&label=release)](https://github.com/cajx-it/SqliteGoSimp/releases/latest)
+[![GitHub downloads](https://img.shields.io/github/downloads/cajx-it/SqliteGoSimp/total?color=brightgreen)](https://github.com/cajx-it/SqliteGoSimp/releases)
+[![GitHub license](https://img.shields.io/github/license/cajx-it/SqliteGoSimp)](https://github.com/cajx-it/SqliteGoSimp/blob/main/LICENSE)
+[![Java](https://img.shields.io/badge/Java-8%2B-orange)](https://www.java.com)
+[![SQLite](https://img.shields.io/badge/SQLite-JDBC-lightblue)](https://github.com/xerial/sqlite-jdbc)
+
 A lightweight, no-fuss Java utility class for working with SQLite databases. No ORMs, no annotations — just plain and simple database operations you can drop into any Java project.
 
 > **v2 Update:** `readAll()` and `Read()` now return a `Map<Integer, ArrayList<String>>` instead of a fixed `data` object, making the library work with **any table schema** regardless of how many columns you have. A new `Print()` helper method is also included for quick console output. `setup()` now requires you to pass the number of columns in your table.
@@ -327,3 +333,63 @@ System.out.println("SqliteGoSimp ready: " + ok);
 - The primary key set in `setup()` is the condition column used by `Read()`, `Update()`, `Delete()`, and `exists()`.
 - `readAll()` row keys start at `1`. `Read()` row key is always `0`. Keep this in mind when accessing results directly without `Print()`.
 - All column values returned by `readAll()` and `Read()` are `String` type regardless of the original SQLite column type. Convert as needed (e.g., `Integer.parseInt(...)`).
+
+---
+
+## How to Create a GitHub Release & Tag
+
+A GitHub Release is how you publish a versioned snapshot of your project. When you attach `sqlitego.jar` to it, users can download it directly from the releases page and the download badge on this README will count it automatically.
+
+### Step 1 — Go to your repository's Releases page
+
+On GitHub, go to your repo and click **Releases** on the right sidebar, then click **Draft a new release**.
+
+### Step 2 — Create a new tag
+
+In the **Choose a tag** dropdown, type your version number — use the format `v1.0.0` (semantic versioning). Since this is the first stable release, use:
+
+```
+v2.0.0
+```
+
+Select **Create new tag on publish**. This creates the tag automatically when you publish.
+
+### Step 3 — Fill in the release details
+
+- **Release title:** `v2.0.0 — Initial Release`
+- **Description:** Describe what's in the release. Example:
+
+```
+## SqliteGoSimp v2.0.0
+
+First stable release of SqliteGoSimp — a simple SQLite wrapper for Java.
+
+### What's included
+- `sqlitego.jar` — drop-in library for your Java project
+- Supports: setup, createTable, Insert, Read, readAll, Update, Delete, exists, count, Print
+- readAll() and Read() return Map<Integer, ArrayList<String>> for flexible multi-column support
+
+### Requirements
+- Java 8+
+- sqlite-jdbc (Xerial) — see README for setup instructions
+```
+
+### Step 4 — Attach the JAR file
+
+Scroll down to **Attach binaries by dropping them here or selecting them**. Upload your `sqlitego.jar` file here. This is what users will download when they click the releases page.
+
+### Step 5 — Publish
+
+Click **Publish release**. Your tag `v2.0.0` is now live and the release badge on this README will automatically update to show `v2.0.0`.
+
+---
+
+### Version Naming Guide
+
+Follow this pattern for future releases:
+
+| Version | When to use |
+|---------|-------------|
+| `v2.0.0` | Major rewrite or breaking change (e.g. changed method signatures) |
+| `v2.1.0` | New method or feature added, backwards compatible |
+| `v2.1.1` | Bug fix, no new features |
