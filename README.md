@@ -23,9 +23,6 @@ A lightweight, no-fuss Java utility class for working with SQLite databases. No 
 
 ## Installation
 
-You have two options to add SqliteGoSimp to your project.
-
-### Option A — Use the JAR (Recommended)
 
 > **Prerequisite:** The **SQLite JDBC driver** must also be added. See [Setting Up JARs in Eclipse](#setting-up-jars-in-eclipse) below.
 
@@ -37,13 +34,6 @@ You have two options to add SqliteGoSimp to your project.
 import com.sqlitego.Sqlitego;
 ```
 
-### Option B — Copy the Source File
-
-1. Clone or download this repository.
-2. Copy `Sqlitego.java` from `src/com/sqlitego/` into your own project's `src/` directory.
-3. Done.
-
-To see working examples of every method, check `Main.java` in `src/com/sqlitego/`.
 
 ---
 
