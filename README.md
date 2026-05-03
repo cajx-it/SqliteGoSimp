@@ -39,6 +39,10 @@ import com.sqlitego.Sqlitego;
 
 ## Quick Start
 
+## See working examples of every method, check `Main.java` in `src/com/sqlitego/`.
+
+---
+
 ```java
 import com.sqlitego.Sqlitego;
 import java.util.ArrayList;
